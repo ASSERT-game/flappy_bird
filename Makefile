@@ -9,6 +9,7 @@ BIN_DIR = bin/
 # List of all the source files.
 SRC_NAMES = \
 	game_input \
+	itow \
 	main \
 	SDL_initialize \
 

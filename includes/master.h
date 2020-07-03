@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 22:03:25 by home             ###   ########.fr       */
+/*   Updated: 2020/07/02 22:21:33 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ void		SDLU_close(t_display *display);
 
 void		process_user_input(t_game_context *game_state);
 // void		update_game_state(t_game_context *game_state);
+
+void		itow(int n, SDL_Rect dest, t_display *dislay);
 
 #endif
