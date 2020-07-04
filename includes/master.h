@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 22:26:16 by home             ###   ########.fr       */
+/*   Updated: 2020/07/03 22:44:12 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define MASTER_H
 
 # include <stdio.h>
+# include <math.h>
 
 # include <SDL_image.h>
 
