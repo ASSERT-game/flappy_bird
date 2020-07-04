@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 20:48:25 by home             ###   ########.fr       */
+/*   Updated: 2020/07/03 20:52:05 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ int	main(void)
 	t_display		display;
 	t_game_context	game_state;
 
-	int				i;
 	SDL_Rect		dest;
 
-	i = 0;
 	dest.h = 15;
 	dest.w = 12;
 	dest.x = 100;
@@ -51,15 +49,12 @@ int	main(void)
 	{
 		process_user_input(&game_state);
 
-		// update_game_state(&game_state);
-		itow(i, dest, &display);
+		update_game_state(&game_state);
 		draw_pipes(&(game_state), &(display));
 
 		SDL_RenderPresent(display.renderer);
 		SDL_RenderClear(display.renderer);
 
-		// game_state.pipes[1].loc_x -= 1;
-		i++;
 	}
 	SDLU_close(&display);
 	return (0);

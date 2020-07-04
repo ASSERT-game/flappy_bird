@@ -14,6 +14,7 @@ SRC_NAMES = \
 	main \
 	pipe \
 	SDL_initialize \
+	update \
 
 # List of all the source files, folders are to be added by
 # including a $(addprefix, DIR_NAME, $(DIR_FILES))
