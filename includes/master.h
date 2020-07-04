@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 20:52:12 by home             ###   ########.fr       */
+/*   Updated: 2020/07/03 22:26:16 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void		process_user_input(t_game_context *game_state);
 void		update_game_state(t_game_context *game_state);
 
 void		draw_pipes(t_game_context *game_state, t_display *display);
+void		draw_player(t_game_context *game_state, t_display *display);
 
 void		itow(int n, SDL_Rect dest, t_display *dislay);
 

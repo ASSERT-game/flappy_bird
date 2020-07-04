@@ -13,6 +13,7 @@ SRC_NAMES = \
 	itow \
 	main \
 	pipe \
+	player \
 	SDL_initialize \
 	update \
 

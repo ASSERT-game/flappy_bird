@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 20:03:46 by home             ###   ########.fr       */
+/*   Updated: 2020/07/03 22:33:27 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,15 @@ typedef struct	s_game_context
 	SDL_Texture	*texture;
 	SDL_Rect	*src_rect;
 
+	int			ticks;
+
 	int			pipe_capacity;
 	int			current_pipe_amount;
 	t_pipe		*pipes;
+
+	int			player_animation;
+	int			player_loc_y;
+	int			player_vel_y;
 }				t_game_context;
 
 #endif

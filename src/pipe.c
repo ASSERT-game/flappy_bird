@@ -6,13 +6,13 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:09:41 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 20:47:21 by home             ###   ########.fr       */
+/*   Updated: 2020/07/03 22:38:37 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "master.h"
 
-#define PIPE_GAP (192)
+#define PIPE_GAP (256)
 #define HALF_GAP (PIPE_GAP / 2)
 
 void	draw_pipe(t_game_context *game_state, t_display *display, t_pipe pipe)

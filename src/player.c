@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_input.c                                       :+:      :+:    :+:   */
+/*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/06 11:30:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 22:36:13 by home             ###   ########.fr       */
+/*   Created: 2020/07/03 20:55:48 by home              #+#    #+#             */
+/*   Updated: 2020/07/03 22:26:41 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "master.h"
 
-void	process_user_input(t_game_context *game_state)
+void	draw_player(t_game_context *game_state, t_display *display)
 {
-	SDL_Event		e;
-	const Uint8		*keystate;
+	SDL_Rect	dest;
 
-	while (SDL_PollEvent(&e) != 0)
-	{
-		if (e.type == SDL_QUIT)
-		{
-			game_state->active = false;
-			break ;
-		}
-	}
-	keystate = SDL_GetKeyboardState(NULL);
-
-	if (keystate[SDL_SCANCODE_SPACE])
-		game_state->player_vel_y = 10;
+	dest.h = TILE_SIZE;
+	dest.w = TILE_SIZE;
+	dest.x = 40;
+	dest.y = game_state->player_loc_y;
+	SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[game_state->player_animation]), &(dest));
 }
