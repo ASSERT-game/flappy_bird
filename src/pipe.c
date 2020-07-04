@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:09:41 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 22:38:37 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 03:11:52 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,38 @@ void	draw_pipes(t_game_context *game_state, t_display *display)
 			draw_pipe(game_state, display, pipes[i]);
 		i++;
 	}
+}
+
+void	double_pipe_space(t_game_context *game_state)
+{
+	int		capacity;
+	t_pipe	*temp;
+
+	capacity = game_state->pipe_capacity;
+	temp = malloc(sizeof(*temp) * (capacity * 2));
+	bzero(temp, sizeof(*temp) * (capacity * 2));
+	memcpy(temp, game_state->pipes, sizeof(*temp) * capacity);
+	game_state->pipe_capacity *= 2;
+
+	free(game_state->pipes);
+	game_state->pipes = temp;
+}
+
+void	spawn_pipe(t_game_context *game_state)
+{
+	int		i;
+
+	i = 0;
+	while (i < game_state->pipe_capacity &&
+			game_state->pipes[i].active == true)
+		i++;
+
+	if (i == game_state->pipe_capacity)
+		double_pipe_space(game_state);
+
+	game_state->pipes[i].active = true;
+	game_state->pipes[i].loc_x = WIN_WIDTH;
+	game_state->pipes[i].loc_y = (rand() % 10 + 5) * 25;
+
+	game_state->current_pipe_amount++;
 }

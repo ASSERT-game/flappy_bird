@@ -14,6 +14,7 @@ SRC_NAMES = \
 	main \
 	pipe \
 	player \
+	render \
 	SDL_initialize \
 	update \
 

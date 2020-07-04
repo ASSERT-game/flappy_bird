@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 22:44:12 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 02:42:15 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,11 @@ SDL_Rect	*carve_flappy_bird_texture(void);
 void		process_user_input(t_game_context *game_state);
 void		update_game_state(t_game_context *game_state);
 
+void		spawn_pipe(t_game_context *game_state);
+
 void		draw_pipes(t_game_context *game_state, t_display *display);
 void		draw_player(t_game_context *game_state, t_display *display);
+void		draw_score(t_game_context *game_state, t_display *display);
 
 void		itow(int n, SDL_Rect dest, t_display *dislay);
 

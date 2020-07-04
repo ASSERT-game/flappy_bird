@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 22:39:24 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 02:45:03 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	game_context_initialize(t_game_context *game_state, t_display *display)
 	game_state->player_animation = FLAPPY_MID;
 	game_state->player_vel_y = 0;
 	game_state->player_loc_y = 100;
+
+	srand(time(NULL));
 }
 
 int	main(void)
@@ -39,11 +41,6 @@ int	main(void)
 
 	SDLU_start(&display);
 	game_context_initialize(&game_state, &display);
-
-	game_state.pipes[1].active = true;
-	game_state.pipes[1].loc_x = 400;
-	game_state.pipes[1].loc_y = 300;
-
 	while (game_state.active == true)
 	{
 		process_user_input(&game_state);
@@ -52,6 +49,7 @@ int	main(void)
 
 		draw_pipes(&(game_state), &(display));
 		draw_player(&(game_state), &(display));
+		draw_score(&(game_state), &(display));
 
 		SDL_RenderPresent(display.renderer);
 		SDL_RenderClear(display.renderer);
