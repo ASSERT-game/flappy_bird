@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 05:25:29 by home              #+#    #+#             */
-/*   Updated: 2020/06/18 22:38:02 by home             ###   ########.fr       */
+/*   Updated: 2020/07/03 20:47:07 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 # define WIN_WIDTH  (512)
 # define WIN_HEIGHT (512)
 
-# define WIN_POS_X 2700
-# define WIN_POS_Y 100
+# define WIN_POS_X (2700)
+# define WIN_POS_Y (100)
+
+# define TILE_SIZE (64)
 
 #endif

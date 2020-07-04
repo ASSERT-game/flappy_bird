@@ -12,6 +12,7 @@ SRC_NAMES = \
 	game_input \
 	itow \
 	main \
+	pipe \
 	SDL_initialize \
 
 # List of all the source files, folders are to be added by
