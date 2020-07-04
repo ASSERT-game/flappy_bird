@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   master.h                                           :+:      :+:    :+:   */
+/*   texture_id.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 20:08:00 by home             ###   ########.fr       */
+/*   Created: 2020/07/03 19:59:20 by home              #+#    #+#             */
+/*   Updated: 2020/07/03 20:01:47 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MASTER_H
-# define MASTER_H
+#ifndef TEXTURE_H
+# define TEXTURE_H
 
-# include <stdio.h>
+# define NONE			(0)
 
-# include <SDL_image.h>
+# define PIPE_BODY		(1)
+# define PIPE_END		(4)
 
-# include "structs.h"
-# include "window_config.h"
-
-void		SDLU_start(t_display *dest);
-void		SDLU_close(t_display *display);
-
-SDL_Rect	*carve_flappy_bird_texture(void);
-
-void		process_user_input(t_game_context *game_state);
-// void		update_game_state(t_game_context *game_state);
-
-void		itow(int n, SDL_Rect dest, t_display *dislay);
+# define FLAPPY_UP		(6)
+# define FLAPPY_MID		(7)
+# define FLAPPY_DOWN	(8)
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 21:58:31 by home              #+#    #+#             */
-/*   Updated: 2020/07/02 22:37:03 by home             ###   ########.fr       */
+/*   Updated: 2020/07/02 22:45:54 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ SDL_Rect	*number_scr_Rects(void)
 #define MINUS_SIGN	(10)
 #define PLUS_SIGN	(11)
 
-void	itow(int n, SDL_Rect dest, t_display *dislay)
+void		itow(int n, SDL_Rect dest, t_display *dislay)
 {
 	int			temp;
 	bool		neg_sign;
