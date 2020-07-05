@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:52:34 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 03:06:09 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 19:36:41 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void		update_game_state(t_game_context *game_state)
 		game_state->player_loc_y -= game_state->player_vel_y;
 	if (game_state->player_vel_y > -10 && game_state->ticks % 8 == 0)
 		game_state->player_vel_y += -1;
+
+	pipe_collisions(game_state);
 
 	game_state->ticks++;
 }

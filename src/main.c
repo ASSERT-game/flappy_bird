@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 02:45:03 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 19:49:36 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	game_context_initialize(t_game_context *game_state, t_display *display)
 	game_state->src_rect = carve_flappy_bird_texture();
 
 	game_state->ticks = 0;
+	game_state->game_over = false;
 
 	game_state->pipe_capacity = 10;
 	game_state->current_pipe_amount = 0;
@@ -50,6 +51,10 @@ int	main(void)
 		draw_pipes(&(game_state), &(display));
 		draw_player(&(game_state), &(display));
 		draw_score(&(game_state), &(display));
+
+		if (game_state.game_over == true)
+			draw_game_over(&(game_state), &(display));
+
 
 		SDL_RenderPresent(display.renderer);
 		SDL_RenderClear(display.renderer);

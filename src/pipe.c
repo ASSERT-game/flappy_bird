@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:09:41 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 03:11:52 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 19:41:10 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,54 @@ void	spawn_pipe(t_game_context *game_state)
 	game_state->pipes[i].loc_y = (rand() % 10 + 5) * 25;
 
 	game_state->current_pipe_amount++;
+}
+
+/*
+** Change this later so that the pipe holds its collision mesh.
+** and certain attributes are only calculated once.
+*/
+
+bool	collides_with_pipe(t_pipe pipe, t_game_context *game_state)
+{
+	bool		result;
+	SDL_Rect	top_pipe;
+	SDL_Rect	bottom_pipe;
+
+	SDL_Rect	player;
+
+	top_pipe.x = pipe.loc_x;
+	top_pipe.y = 0;
+	top_pipe.w = TILE_SIZE;
+	top_pipe.h = pipe.loc_y - (HALF_GAP);
+
+	bottom_pipe.x = pipe.loc_x;
+	bottom_pipe.y = pipe.loc_y + (HALF_GAP);
+	bottom_pipe.w = TILE_SIZE;
+	bottom_pipe.h = (WIN_HEIGHT) - bottom_pipe.y;
+
+	player.x = 40;
+	player.y = game_state->player_loc_y;
+	player.w = TILE_SIZE;
+	player.h = TILE_SIZE;
+
+	result = false;
+	result |= SDL_HasIntersection(&player, &top_pipe);
+	result |= SDL_HasIntersection(&player, &bottom_pipe);
+	return (result);
+}
+
+void	pipe_collisions(t_game_context *game_state)
+{
+	int		i;
+
+	i = 0;
+	while (i < game_state->pipe_capacity)
+	{
+		if (game_state->pipes[i].active == true)
+		{
+			if (collides_with_pipe(game_state->pipes[i], game_state) == true)
+				game_state->game_over = true;
+		}
+		i++;
+	}
 }

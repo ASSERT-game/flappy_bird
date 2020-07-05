@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 03:05:42 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 22:33:27 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 19:40:21 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef struct	s_game_context
 	SDL_Rect	*src_rect;
 
 	int			ticks;
+
+	bool		game_over;
 
 	int			pipe_capacity;
 	int			current_pipe_amount;

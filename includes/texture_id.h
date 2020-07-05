@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 19:59:20 by home              #+#    #+#             */
-/*   Updated: 2020/07/03 20:01:47 by home             ###   ########.fr       */
+/*   Updated: 2020/07/04 19:43:57 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 # define PIPE_BODY		(1)
 # define PIPE_END		(4)
+
+# define GAME_OVER		(2)
 
 # define FLAPPY_UP		(6)
 # define FLAPPY_MID		(7)
