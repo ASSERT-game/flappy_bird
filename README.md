@@ -1,6 +1,6 @@
 # flappy_bird
 
-Requires SDL2 and SDL image installed in ~/.brew
+Requires SDL2 and SDL_image installed in ~/.brew
 
 `make run` or `make re` then run `./flappy_bird`
 
