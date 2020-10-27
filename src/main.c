@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 19:49:36 by home             ###   ########.fr       */
+/*   Updated: 2020/10/27 01:03:46 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	game_context_initialize(t_game_context *game_state, t_display *display)
 	srand(time(NULL));
 }
 
+#include <unistd.h>
+
 int	main(void)
 {
 	t_display		display;
@@ -55,10 +57,9 @@ int	main(void)
 		if (game_state.game_over == true)
 			draw_game_over(&(game_state), &(display));
 
-
 		SDL_RenderPresent(display.renderer);
 		SDL_RenderClear(display.renderer);
-
+		usleep(GAME_TICK);
 	}
 	SDLU_close(&display);
 	return (0);
