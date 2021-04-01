@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:09:41 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 19:41:10 by home             ###   ########.fr       */
+/*   Updated: 2020/10/27 01:16:10 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	spawn_pipe(t_game_context *game_state)
 
 	game_state->pipes[i].active = true;
 	game_state->pipes[i].loc_x = WIN_WIDTH;
-	game_state->pipes[i].loc_y = (rand() % 10 + 5) * 25;
+	game_state->pipes[i].loc_y = ((rand() % 15 + 6) * (WIN_HEIGHT / 15 / 2));
 
 	game_state->current_pipe_amount++;
 }

@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:31:10 by home              #+#    #+#             */
-/*   Updated: 2021/03/07 15:50:15 by home             ###   ########.fr       */
+/*   Updated: 2021/03/31 19:17:56 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	game_context_initialize(t_game_context *game_state, t_display *display)
 	srand(time(NULL));
 }
 
+#include <unistd.h>
+
 int	main(void)
 {
 	t_display		display;
@@ -58,7 +60,7 @@ int	main(void)
 
 		SDL_RenderPresent(display.renderer);
 		SDL_RenderClear(display.renderer);
-
+		usleep(GAME_TICK);
 	}
 	SDLU_close(&display);
 	return (0);
