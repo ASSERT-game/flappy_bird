@@ -6,11 +6,12 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:55:48 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 02:36:25 by home             ###   ########.fr       */
+/*   Updated: 2021/03/31 17:28:44 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "master.h"
+
 
 void	draw_player(t_game_context *game_state, t_display *display)
 {
@@ -31,5 +32,5 @@ void	draw_player(t_game_context *game_state, t_display *display)
 		game_state->player_animation = FLAPPY_UP;
 
 	SDL_RenderCopyEx(display->renderer, game_state->texture, &(game_state->src_rect[game_state->player_animation]), &(dest), angle, NULL, SDL_FLIP_NONE);
-	// SDL_RenderCopy(display->renderer, game_state->texture, &(game_state->src_rect[game_state->player_animation]), &(dest));
+	SDL_SetTextureColorMod(game_state->texture, 255, 255, 255);
 }

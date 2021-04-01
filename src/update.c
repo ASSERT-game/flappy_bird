@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/03 20:52:34 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 19:36:41 by home             ###   ########.fr       */
+/*   Updated: 2021/01/13 19:13:48 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void		update_active_pipes(t_game_context *game_state)
 	}
 }
 
+#include <unistd.h>
+
 void		update_game_state(t_game_context *game_state)
 {
 	if (game_state->ticks % 150 == 0)
@@ -47,4 +49,5 @@ void		update_game_state(t_game_context *game_state)
 	pipe_collisions(game_state);
 
 	game_state->ticks++;
+	usleep(10000);
 }

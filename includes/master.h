@@ -6,7 +6,7 @@
 /*   By: home <home@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 02:38:32 by home              #+#    #+#             */
-/*   Updated: 2020/07/04 19:48:48 by home             ###   ########.fr       */
+/*   Updated: 2021/01/18 23:05:03 by home             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void		SDLU_close(t_display *display);
 
 SDL_Rect	*carve_flappy_bird_texture(void);
 
-void		process_user_input(t_game_context *game_state);
+void		game_context_initialize(t_game_context *game_state, t_display *display);
+
+// void		process_user_input(t_game_context *game_state);
+void		process_user_input(t_game_context *game_state, t_display *display);
 void		update_game_state(t_game_context *game_state);
 
 void		pipe_collisions(t_game_context *game_state);
